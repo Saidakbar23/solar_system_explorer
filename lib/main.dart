@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'image_carousel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,34 +12,89 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Builder(
-          builder: (context) {
-            final double height = MediaQuery.of(context).size.height;
-            return CarouselSlider(
-              options: CarouselOptions(
-                height: height,
-                viewportFraction: 1.0,
-                enlargeCenterPage: false,
-              ),
-              items: [
-                Container(
-                  height: height,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: height,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: height,
-                  color: Colors.blue,
-                ),
-              ],
-            );
-          },
-        ),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black54,
       ),
+      home: ImageCarousel(),
     );
   }
 }
+
+// Builder(
+// builder: (context) {
+// final double height = MediaQuery.of(context).size.height;
+// return CarouselSlider(
+// options: CarouselOptions(
+// height: height,
+// viewportFraction: 0.9,
+// enlargeCenterPage: false,
+// ),
+// items: [
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/sun1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/mercury1.png',
+// alignment: Alignment.center,
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/venus1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/earth1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/mars1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/jupiter1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/saturn1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/uranus1.png',
+// ),
+// ),
+// SizedBox(
+// height: height,
+// width: double.infinity,
+// child: Image.asset(
+// 'images/neptune1.png',
+// ),
+// ),
+// ],
+// );
+// },
+// ),
