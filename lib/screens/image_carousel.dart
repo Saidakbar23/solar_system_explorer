@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../components/carousel_item.dart';
+import '../components/carousel components/carousel_item.dart';
+import '../components/carousel components/carousel_item_name.dart';
+import '../components/carousel components/carousel_page_tracker.dart';
 
 class ImageCarousel extends StatefulWidget {
   const ImageCarousel({Key? key}) : super(key: key);
@@ -21,10 +23,12 @@ class _ImageCarouselState extends State<ImageCarousel> {
     'neptune'
   ];
   int activePage = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        alignment: Alignment.bottomLeft,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
@@ -56,29 +60,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
               height: 150,
               child: Column(
                 children: [
-                  Text(
-                    objects[activePage % 9].toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Angora',
-                      fontSize: 55.0,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(9, (indexDots) {
-                      return Container(
-                        width: activePage % 9 == indexDots % 9 ? 18 : 8,
-                        height: 8,
-                        margin: EdgeInsets.only(right: 3.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: activePage % 9 == indexDots % 9
-                              ? Colors.white
-                              : Colors.white.withOpacity(0.5),
-                        ),
-                      );
-                    }),
-                  ),
+                  CarouselItemName(object: objects[activePage % 9]),
+                  CarouselPageTracker(activePage: activePage),
                 ],
               ),
             ),
