@@ -63,7 +63,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                height: 150,
+                height: 200,
                 child: Column(
                   children: [
                     CarouselItemName(object: objects[activePage % 9]),
