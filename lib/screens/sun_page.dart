@@ -3,18 +3,29 @@ import '../data/sun_data.dart';
 import 'image_gallery.dart';
 
 class SunPage extends StatefulWidget {
-  const SunPage({Key? key}) : super(key: key);
+  const SunPage({super.key, required this.planet});
+
+  final String planet;
 
   @override
   State<SunPage> createState() => _SunPageState();
 }
 
 class _SunPageState extends State<SunPage> {
+  late String planetSelected;
+
+  @override
+  void initState() {
+    super.initState();
+    planetSelected = widget.planet;
+  }
+
   final List<Widget> pages = [
     PageContent(),
     ImageGallery(),
   ];
   int selectedPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +57,9 @@ class _SunPageState extends State<SunPage> {
 }
 
 class PageContent extends StatelessWidget {
-  const PageContent({super.key});
+  const PageContent({super.key, this.planet});
+
+  final String? planet;
 
   @override
   Widget build(BuildContext context) {

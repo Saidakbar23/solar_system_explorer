@@ -31,7 +31,12 @@ class _ImageCarouselState extends State<ImageCarousel> {
     return Scaffold(
       body: GestureDetector(
         onVerticalDragUpdate: (dragUpdateDetails) {
-          Navigator.push(context, SwipeUpAnimation(page: SunPage()));
+          Navigator.push(
+              context,
+              SwipeUpAnimation(
+                  page: SunPage(
+                planet: objects[activePage % 9],
+              )));
         },
         child: Container(
           alignment: Alignment.bottomLeft,
