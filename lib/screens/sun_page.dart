@@ -29,11 +29,7 @@ class _SunPageState extends State<SunPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: pages[selectedPageIndex],
-      ),
+      body: pages[selectedPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -75,23 +71,18 @@ class PageContent extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.all(10.0),
           children: [
-            SizedBox(
-              width: 10.0,
-              height: 200.0,
-              child: Container(
-                color: Colors.white,
-              ),
-              // child: Image.asset(
-              //   'images/sun.png',
-              //   fit: BoxFit.contain,
-              // ),
-            ),
             Text(
-              'Sun',
+              'The Sun',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
                 fontFamily: 'Angora',
+              ),
+            ),
+            SizedBox(
+              height: 300.0,
+              child: Image.asset(
+                'images/sun.png',
               ),
             ),
             Text(
