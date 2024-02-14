@@ -69,7 +69,7 @@ class PageContent extends StatelessWidget {
       },
       child: SafeArea(
         child: ListView(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
               'The Sun',
@@ -79,18 +79,78 @@ class PageContent extends StatelessWidget {
                 fontFamily: 'Angora',
               ),
             ),
+            Text(
+              information[0],
+              style: TextStyle(
+                fontSize: 25.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
             SizedBox(
-              height: 300.0,
+              height: 400.0,
               child: Image.asset(
                 'images/sun.png',
               ),
             ),
             Text(
-              facts[0],
+              information[1],
               style: TextStyle(
                 fontSize: 25.0,
                 fontFamily: 'Poppins',
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      missions[0],
+                      style: TextStyle(
+                        fontSize: 70,
+                        color: Colors.lightBlue,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Active \nMissions',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      missions[1],
+                      style: TextStyle(
+                        fontSize: 70,
+                        color: Colors.lightBlue,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Upcoming \nMissions',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              children: [Text('The Sun Facts'), Row()],
             ),
           ],
         ),
