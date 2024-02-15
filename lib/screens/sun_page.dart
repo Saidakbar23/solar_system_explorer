@@ -21,7 +21,9 @@ class _SunPageState extends State<SunPage> {
   }
 
   final List<Widget> pages = [
-    PageContent(),
+    PageContent(
+      planet: planetSelected,
+    ),
     ImageGallery(),
   ];
   int selectedPageIndex = 0;
@@ -149,8 +151,53 @@ class PageContent extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
-              children: [Text('The Sun Facts'), Row()],
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'How Big Is The Sun?',
+              style: TextStyle(
+                fontSize: 35.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[2],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              'How Hot Is The Sun?',
+              style: TextStyle(
+                fontSize: 35.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[3],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              'When will the Sun explode?',
+              style: TextStyle(
+                fontSize: 35.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[4],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
             ),
           ],
         ),
@@ -158,71 +205,3 @@ class PageContent extends StatelessWidget {
     );
   }
 }
-
-// Row(
-//   children: <Widget>[
-//     Expanded(
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//         child: Divider(
-//           color: Colors.grey[700],
-//         ),
-//       ),
-//     ),
-//     Text(
-//       'CENTER OF OUR SOLAR SYSTEM',
-//       style: TextStyle(
-//         color: Colors.white,
-//         fontSize: 15.0,
-//       ),
-//     ),
-//     Expanded(
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//         child: Divider(
-//           color: Colors.grey[700],
-//         ),
-//       ),
-//     ),
-//   ],
-// ),
-// SizedBox(
-//   height: 15.0,
-// ),
-// Text(
-//   'Sun',
-//   style: TextStyle(
-//     fontSize: 50.0,
-//     fontFamily: 'Angora',
-//   ),
-// ),
-// SizedBox(
-//   height: 15.0,
-// ),
-// Row(
-//   children: <Widget>[
-//     Expanded(
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//         child: Divider(
-//           color: Colors.grey[700],
-//         ),
-//       ),
-//     ),
-//     Text(
-//       '4.5 billion years old'.toUpperCase(),
-//       style: TextStyle(
-//         color: Colors.white,
-//         fontSize: 15.0,
-//       ),
-//     ),
-//     Expanded(
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//         child: Divider(
-//           color: Colors.grey[700],
-//         ),
-//       ),
-//     ),
-//   ],
-// ),
