@@ -19,13 +19,3 @@ const List missions = [
   '19',
   '13',
 ];
-
-const Map facts = {
-  'Equator circumference': '4,379,000km',
-  'Radius': '695,700km',
-  'Temperature': '5,973°C to 15,000,000°C',
-  'Average orbital speed around the Milky Way': '720,000km/h',
-  'Star type': 'Yellow dwarf',
-  'Average time taken to rotate on axis': '27 Earth days',
-  'Number of planets': '8',
-};

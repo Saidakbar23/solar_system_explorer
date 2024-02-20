@@ -20,18 +20,20 @@ class _SunPageState extends State<SunPage> {
     planetSelected = widget.planet;
   }
 
-  final List<Widget> pages = [
-    PageContent(
-      planet: planetSelected,
-    ),
-    ImageGallery(),
-  ];
+  // final List<Widget> pages = [
+  //   PageContent(
+  //     planet: planetSelected,
+  //   ),
+  //   ImageGallery(),
+  // ];
   int selectedPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[selectedPageIndex],
+      body: PageContent(
+        planet: planetSelected,
+      ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -59,7 +61,7 @@ class _SunPageState extends State<SunPage> {
 }
 
 class PageContent extends StatelessWidget {
-  const PageContent({super.key, this.planet});
+  const PageContent({super.key, required this.planet});
 
   final String? planet;
 
@@ -74,7 +76,7 @@ class PageContent extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'The Sun',
+              'The $planet',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -91,7 +93,7 @@ class PageContent extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/sun.png',
+                'images/$planet.png',
               ),
             ),
             Text(
@@ -155,7 +157,7 @@ class PageContent extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'How Big Is The Sun?',
+              'How Big Is The $planet?',
               style: TextStyle(
                 fontSize: 35.0,
                 fontWeight: FontWeight.w700,
@@ -170,7 +172,7 @@ class PageContent extends StatelessWidget {
               ),
             ),
             Text(
-              'How Hot Is The Sun?',
+              'How Hot Is The $planet?',
               style: TextStyle(
                 fontSize: 35.0,
                 fontWeight: FontWeight.w700,
