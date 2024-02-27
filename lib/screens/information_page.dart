@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import '../data/sun_data.dart';
 import 'image_gallery.dart';
 
-class SunPage extends StatefulWidget {
-  const SunPage({super.key, required this.planet});
+class InformationPage extends StatefulWidget {
+  const InformationPage({super.key, required this.planet});
 
   final String planet;
 
   @override
-  State<SunPage> createState() => _SunPageState();
+  State<InformationPage> createState() => _SunPageState();
 }
 
-class _SunPageState extends State<SunPage> {
+class _SunPageState extends State<InformationPage> {
   late String planetSelected;
 
   @override

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/carousel components/carousel_item.dart';
 import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';
-import 'sun_page.dart';
+import 'information_page.dart';
 import '../components/animation/swipe_up_animation.dart';
 
 class ImageCarousel extends StatefulWidget {
@@ -34,7 +34,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
           Navigator.push(
               context,
               SwipeUpAnimation(
-                  page: SunPage(
+                  page: InformationPage(
                 planet: objects[activePage % 9],
               )));
         },
