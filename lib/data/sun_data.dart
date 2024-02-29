@@ -1,9 +1,11 @@
 const List<String> information = [
   'Our Sun is a 4.5 billion-year-old yellow dwarf star – a hot glowing ball of hydrogen and helium – at the center of our solar system.',
   'The Sun is the star at the heart of our solar system. Its gravity holds the solar system together, keeping everything – from the biggest planets to the smallest bits of debris – in its orbit. The connection and interactions between the Sun and Earth drive the seasons, ocean currents, weather, climate, radiation belts and auroras. ',
-  'The Sun is the biggest object in our solar system, with a distance of 695,508 kilometres from centre to surface. It contains 99.86% of the mass of the entire solar system and could contain roughly 1.3 million Earths. The Sun is an average-sized star. Some stars are just a tenth of its size, while others are more than 700 times bigger. Due to its huge mass and strong gravity, the Sun is a near perfect sphere.',
-  'The core is the hottest part of the Sun, at 15 million degrees Celsius. This is hot enough to sustain thermonuclear fusion, when hydrogen atoms are fused together to form larger helium atoms. This releases an extraordinary amount of energy which in turn is released as heat and light.',
-  'It won\'t. When all of the hydrogen in its core is burned up, it exits the main sequence stage. As a relatively small star, the outer layers of the Sun will collapse in on themselves, creating temperatures hot enough to fuse helium into carbon. At this point the pressure will cause the star to rapidly expand outward to form a red giant. For the Sun, this is expected to occur in about five billion years. It is likely to engulf Mercury and Venus - and potentially even the Earth. It will eventually shrink to become a planetary nebula with a white dwarf at its core.'
+  'The Latin word for Sun is “sol,” which is the main adjective for all things Sun-related: solar. Helios, the Sun god in ancient Greek mythology, lends his name to many Sun-related terms as well, such as heliosphere and helioseismology.',
+  'The Sun could not harbor life as we know it because of its extreme temperatures and radiation. Yet life on Earth is only possible because of the Sun’s light and energy.',
+  'Our Sun is a medium-sized star with a radius of about 435,000 miles (700,000 kilometers). Many stars are much larger – but the Sun is far more massive than our home planet: it would take more than 330,000 Earths to match the mass of the Sun, and it would take 1.3 million Earths to fill the Sun\'s volume.',
+  'The Sun is located in the Milky Way galaxy in a spiral arm called the Orion Spur that extends outward from the Sagittarius arm. The Sun orbits the center of the Milky Way, bringing with it the planets, asteroids, comets, and other objects in our solar system. Even if it is moving with average speed of 450,000 miles per hours, it takes about 230 million years for the Sun to make one complete trip around the Milky Way.',
+  'The Sun formed about 4.6 billion years ago in a giant, spinning cloud of gas and dust called the solar nebula. As the nebula collapsed under its own gravity, it spun faster and flattened into a disk. Most of the nebula\'s material was pulled toward the center to form our Sun, which accounts for 99.8% of our solar system’s mass. Like all stars, our Sun will eventually run out of energy. When it starts to die, the Sun will expand into a red giant star, becoming so large that it will engulf Mercury and Venus, and possibly Earth as well.',
 ];
 
 const List images = [
@@ -13,6 +15,7 @@ const List images = [
   'images/sun_gallery/OS-23082-39 Grazing Mammoths © Rafael Schmall - Astronomy Photographer of the Year 2023 Our Sun.jpg',
   'images/sun_gallery/OS-161368-21 Loop Prominence © Eduardo Schaberger Poupeau - Astronomy Photographer of the Year 2023 Our Sun.jpg',
   'images/sun_gallery/OS-161368-27 A Sun Question © Eduardo Schaberger Poupeau - Astronomy Photographer of the Year 2023 Our Sun.jpg',
+  'images/sun_gallery/sun.png',
 ];
 
 const List missions = [

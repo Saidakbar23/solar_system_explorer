@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system_explorer/screens/earth_page.dart';
+import 'package:solar_system_explorer/screens/jupiter_page.dart';
+import 'package:solar_system_explorer/screens/mars_page.dart';
+import 'package:solar_system_explorer/screens/mercury_page.dart';
+import 'package:solar_system_explorer/screens/neptune_page.dart';
+import 'package:solar_system_explorer/screens/saturn_page.dart';
+import 'package:solar_system_explorer/screens/sun_page.dart';
+import 'package:solar_system_explorer/screens/uranus_page.dart';
+import 'package:solar_system_explorer/screens/venus_page.dart';
 import '../components/carousel components/carousel_item.dart';
 import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';
-import 'information_page.dart';
 import '../components/animation/swipe_up_animation.dart';
 
 class ImageCarousel extends StatefulWidget {
+  static const String id = 'Home Screen';
   const ImageCarousel({Key? key}) : super(key: key);
 
   @override
@@ -26,17 +35,24 @@ class _ImageCarouselState extends State<ImageCarousel> {
   ];
   int activePage = 0;
 
+  List pages = [
+    SunPage.id,
+    MercuryPage.id,
+    VenusPage.id,
+    EarthPage.id,
+    MarsPage.id,
+    JupiterPage.id,
+    SaturnPage.id,
+    UranusPage.id,
+    NeptunePage.id,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
         onVerticalDragUpdate: (dragUpdateDetails) {
-          Navigator.push(
-              context,
-              SwipeUpAnimation(
-                  page: InformationPage(
-                planet: objects[activePage % 9],
-              )));
+          Navigator.pushNamed(context, pages[activePage % 9]);
         },
         child: Container(
           alignment: Alignment.bottomLeft,
