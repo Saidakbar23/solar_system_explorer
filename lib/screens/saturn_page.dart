@@ -175,7 +175,7 @@ class SaturnPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/jupiter.png',
+                'images/saturn.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -219,7 +219,7 @@ class SaturnPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Surface',
+              'Structure',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -237,7 +237,7 @@ class SaturnPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Atmosphere',
+              'Surface',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
