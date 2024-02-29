@@ -13,7 +13,7 @@ class UranusPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Jupiter',
+              'Uranus',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class UranusPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/jupiter.png',
+                'images/uranus.png',
               ),
             ),
             SizedBox(
@@ -56,29 +56,6 @@ class UranusPage extends StatelessWidget {
                   children: [
                     Text(
                       missions[0],
-                      style: TextStyle(
-                        fontSize: 70,
-                        color: Colors.lightBlue,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Active \nMissions',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      missions[1],
                       style: TextStyle(
                         fontSize: 70,
                         color: Colors.lightBlue,
@@ -175,7 +152,7 @@ class UranusPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/saturn.png',
+                'images/uranus.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -246,6 +223,24 @@ class UranusPage extends StatelessWidget {
             ),
             Text(
               information[9],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Atmosphere',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[10],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',
