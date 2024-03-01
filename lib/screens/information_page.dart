@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'image_gallery.dart';
-import 'sun_page.dart';
+import 'planets/sun_page.dart';
 
 class InformationPage extends StatefulWidget {
   const InformationPage({super.key, required this.planet});

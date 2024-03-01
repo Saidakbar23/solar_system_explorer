@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/uranus_data.dart';
+import '../../data/earth_data.dart';
 
-class UranusPage extends StatelessWidget {
-  static const String id = 'Uranus Page';
-  const UranusPage({super.key});
+class EarthPage extends StatelessWidget {
+  static const String id = 'Earth Page';
+  const EarthPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class UranusPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Uranus',
+              'Earth',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class UranusPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/uranus.png',
+                'images/earth.png',
               ),
             ),
             SizedBox(
@@ -56,6 +56,29 @@ class UranusPage extends StatelessWidget {
                   children: [
                     Text(
                       missions[0],
+                      style: TextStyle(
+                        fontSize: 70,
+                        color: Colors.lightBlue,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Active \nMissions',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      missions[1],
                       style: TextStyle(
                         fontSize: 70,
                         color: Colors.lightBlue,
@@ -99,7 +122,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Potential for Life',
+              'Size and Distance',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -117,7 +140,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Size and Distance',
+              'Orbit and Rotation',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -135,7 +158,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Orbit and Rotation',
+              'Moons',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -152,7 +175,7 @@ class UranusPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/uranus.png',
+                'images/earth_gallery/earth1.jpeg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -160,7 +183,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Moons',
+              'Formation',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -178,7 +201,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Rings',
+              'Structure',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -196,7 +219,7 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Structure',
+              'Surface',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -214,24 +237,6 @@ class UranusPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Surface',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            Text(
-              information[9],
-              style: TextStyle(
-                fontSize: 20.0,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
               'Atmosphere',
               style: TextStyle(
                 fontSize: 40.0,
@@ -240,7 +245,7 @@ class UranusPage extends StatelessWidget {
               ),
             ),
             Text(
-              information[10],
+              information[9],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

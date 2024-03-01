@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/earth_data.dart';
+import '../../data/neptune_data.dart';
 
-class EarthPage extends StatelessWidget {
-  static const String id = 'Earth Page';
-  const EarthPage({super.key});
+class NeptunePage extends StatelessWidget {
+  static const String id = 'Neptune Page';
+  const NeptunePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class EarthPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Earth',
+              'Neptune',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class EarthPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/earth.png',
+                'images/neptune.png',
               ),
             ),
             SizedBox(
@@ -56,29 +56,6 @@ class EarthPage extends StatelessWidget {
                   children: [
                     Text(
                       missions[0],
-                      style: TextStyle(
-                        fontSize: 70,
-                        color: Colors.lightBlue,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Active \nMissions',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      missions[1],
                       style: TextStyle(
                         fontSize: 70,
                         color: Colors.lightBlue,
@@ -122,7 +99,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Size and Distance',
+              'Potential for Life',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -140,7 +117,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Orbit and Rotation',
+              'Size and Distance',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -158,7 +135,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Moons',
+              'Orbit and Rotation',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -175,7 +152,7 @@ class EarthPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/earth_gallery/earth1.jpeg',
+                'images/uranus.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +160,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Formation',
+              'Moons',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -201,7 +178,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Structure',
+              'Rings',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -219,7 +196,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Surface',
+              'Structure',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -237,7 +214,7 @@ class EarthPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Atmosphere',
+              'Surface',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -246,6 +223,24 @@ class EarthPage extends StatelessWidget {
             ),
             Text(
               information[9],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Atmosphere',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[10],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

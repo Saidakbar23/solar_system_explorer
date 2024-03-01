@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/mars_data.dart';
+import '../../data/uranus_data.dart';
 
-class MarsPage extends StatelessWidget {
-  static const String id = 'Mars Page';
-  const MarsPage({super.key});
+class UranusPage extends StatelessWidget {
+  static const String id = 'Uranus Page';
+  const UranusPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MarsPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Mars',
+              'Uranus',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class MarsPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/mars.png',
+                'images/uranus.png',
               ),
             ),
             SizedBox(
@@ -56,29 +56,6 @@ class MarsPage extends StatelessWidget {
                   children: [
                     Text(
                       missions[0],
-                      style: TextStyle(
-                        fontSize: 70,
-                        color: Colors.lightBlue,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Active \nMissions',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      missions[1],
                       style: TextStyle(
                         fontSize: 70,
                         color: Colors.lightBlue,
@@ -175,7 +152,7 @@ class MarsPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/mars.png',
+                'images/uranus.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -201,7 +178,7 @@ class MarsPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Formation',
+              'Rings',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/mercury_data.dart';
+import '../../data/mars_data.dart';
 
-class MercuryPage extends StatelessWidget {
-  static const String id = 'Mercury Page';
-  const MercuryPage({super.key});
+class MarsPage extends StatelessWidget {
+  static const String id = 'Mars Page';
+  const MarsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MercuryPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Mercury',
+              'Mars',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class MercuryPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/mercury.png',
+                'images/mars.png',
               ),
             ),
             SizedBox(
@@ -175,7 +175,7 @@ class MercuryPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/mercury_gallery/mercury6.jpeg',
+                'images/mars.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class MercuryPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Formation',
+              'Moons',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -201,7 +201,7 @@ class MercuryPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Surface',
+              'Formation',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -210,6 +210,60 @@ class MercuryPage extends StatelessWidget {
             ),
             Text(
               information[7],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Structure',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[8],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Surface',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[9],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Atmosphere',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[10],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

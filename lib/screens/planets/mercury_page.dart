@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/venus_data.dart';
+import '../../data/mercury_data.dart';
 
-class VenusPage extends StatelessWidget {
-  static const String id = 'Venus Page';
-  const VenusPage({super.key});
+class MercuryPage extends StatelessWidget {
+  static const String id = 'Mercury Page';
+  const MercuryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class VenusPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Venus',
+              'Mercury',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -66,7 +66,7 @@ class VenusPage extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Upcoming \nMissions',
+                      'Active \nMissions',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -175,7 +175,7 @@ class VenusPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                images[1],
+                'images/mercury_gallery/mercury6.jpeg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -210,24 +210,6 @@ class VenusPage extends StatelessWidget {
             ),
             Text(
               information[7],
-              style: TextStyle(
-                fontSize: 20.0,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              'Atmosphere',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            Text(
-              information[8],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/neptune_data.dart';
+import '../../data/saturn_data.dart';
 
-class NeptunePage extends StatelessWidget {
-  static const String id = 'Neptune Page';
-  const NeptunePage({super.key});
+class SaturnPage extends StatelessWidget {
+  static const String id = 'Saturn Page';
+  const SaturnPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class NeptunePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Neptune',
+              'Jupiter',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class NeptunePage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/neptune.png',
+                'images/jupiter.png',
               ),
             ),
             SizedBox(
@@ -56,6 +56,29 @@ class NeptunePage extends StatelessWidget {
                   children: [
                     Text(
                       missions[0],
+                      style: TextStyle(
+                        fontSize: 70,
+                        color: Colors.lightBlue,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'Active \nMissions',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      missions[1],
                       style: TextStyle(
                         fontSize: 70,
                         color: Colors.lightBlue,
@@ -152,7 +175,7 @@ class NeptunePage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/uranus.png',
+                'images/saturn.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -223,24 +246,6 @@ class NeptunePage extends StatelessWidget {
             ),
             Text(
               information[9],
-              style: TextStyle(
-                fontSize: 20.0,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              'Atmosphere',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            Text(
-              information[10],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

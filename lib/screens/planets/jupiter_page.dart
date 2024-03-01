@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/sun_data.dart';
+import '../../data/jupiter_data.dart';
 
-class SunPage extends StatelessWidget {
-  static const String id = 'Sun Page';
-  const SunPage({super.key});
+class JupiterPage extends StatelessWidget {
+  static const String id = 'Jupiter Page';
+  const JupiterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SunPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'The Sun',
+              'Jupiter',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -28,10 +28,16 @@ class SunPage extends StatelessWidget {
               ),
             ),
             SizedBox(
+              height: 10,
+            ),
+            SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/sun.png',
+                'images/jupiter.png',
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
               information[1],
@@ -44,7 +50,7 @@ class SunPage extends StatelessWidget {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
                   children: [
@@ -83,7 +89,7 @@ class SunPage extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Upcoming \nMissions',
+                      'Past \nMissions',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -169,7 +175,7 @@ class SunPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/sun_gallery/sun.png',
+                'images/jupiter.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -177,7 +183,7 @@ class SunPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Formation',
+              'Moons',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -186,6 +192,60 @@ class SunPage extends StatelessWidget {
             ),
             Text(
               information[6],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Rings',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[7],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Surface',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[8],
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Atmosphere',
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            Text(
+              information[9],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',

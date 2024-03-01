@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../data/saturn_data.dart';
+import '../../data/venus_data.dart';
 
-class SaturnPage extends StatelessWidget {
-  static const String id = 'Saturn Page';
-  const SaturnPage({super.key});
+class VenusPage extends StatelessWidget {
+  static const String id = 'Venus Page';
+  const VenusPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SaturnPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           children: [
             Text(
-              'Jupiter',
+              'Venus',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50.0,
@@ -33,7 +33,7 @@ class SaturnPage extends StatelessWidget {
             SizedBox(
               height: 300.0,
               child: Image.asset(
-                'images/jupiter.png',
+                'images/mercury.png',
               ),
             ),
             SizedBox(
@@ -66,7 +66,7 @@ class SaturnPage extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Active \nMissions',
+                      'Upcoming \nMissions',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -175,7 +175,7 @@ class SaturnPage extends StatelessWidget {
             SizedBox(
               height: 400.0,
               child: Image.asset(
-                'images/saturn.png',
+                images[1],
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class SaturnPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Moons',
+              'Formation',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -201,7 +201,7 @@ class SaturnPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Rings',
+              'Surface',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -219,7 +219,7 @@ class SaturnPage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Structure',
+              'Atmosphere',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.w800,
@@ -228,24 +228,6 @@ class SaturnPage extends StatelessWidget {
             ),
             Text(
               information[8],
-              style: TextStyle(
-                fontSize: 20.0,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              'Surface',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            Text(
-              information[9],
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Poppins',
