@@ -6,7 +6,7 @@ import 'package:solar_system_explorer/screens/planets/mercury/mercury_page.dart'
 import 'package:solar_system_explorer/screens/planets/neptune_page.dart';
 import 'package:solar_system_explorer/screens/planets/saturn/saturn_page.dart';
 import 'package:solar_system_explorer/screens/planets/sun/sun_page.dart';
-import 'package:solar_system_explorer/screens/planets/uranus_page.dart';
+import 'package:solar_system_explorer/screens/planets/uranus/uranus_page.dart';
 import 'package:solar_system_explorer/screens/planets/venus/venus_page.dart';
 import 'screens/image_carousel.dart';
 
