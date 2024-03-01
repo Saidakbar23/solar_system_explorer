@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:solar_system_explorer/screens/image_carousel.dart';
-import '../../../data/mercury_data.dart';
+import '../../../data/earth_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
 
-class MercuryPage extends StatefulWidget {
-  static const String id = 'Mercury Page';
-  const MercuryPage({super.key});
+class EarthPage extends StatefulWidget {
+  static const String id = 'Earth Page';
+  const EarthPage({super.key});
 
   @override
-  State<MercuryPage> createState() => _MercuryPageState();
+  State<EarthPage> createState() => _EarthPageState();
 }
 
-class _MercuryPageState extends State<MercuryPage> {
+class _EarthPageState extends State<EarthPage> {
   final List<Widget> pages = [
     Content(),
     ImageGallery(),
@@ -61,7 +60,7 @@ class Content extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         children: [
           Text(
-            'Mercury',
+            'Earth',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 50.0,
@@ -81,7 +80,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 300.0,
             child: Image.asset(
-              'images/mercury.png',
+              'images/earth.png',
             ),
           ),
           SizedBox(
@@ -170,7 +169,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Potential for Life',
+            'Size and Distance',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -188,7 +187,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Size and Distance',
+            'Orbit and Rotation',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -206,7 +205,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Orbit and Rotation',
+            'Moons',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -223,7 +222,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 400.0,
             child: Image.asset(
-              'images/mercury_gallery/mercury6.jpeg',
+              'images/earth_gallery/earth1.jpeg',
               fit: BoxFit.cover,
             ),
           ),
@@ -249,7 +248,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Surface',
+            'Structure',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -258,6 +257,42 @@ class Content extends StatelessWidget {
           ),
           Text(
             information[7],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Surface',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[8],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Atmosphere',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[9],
             style: TextStyle(
               fontSize: 20.0,
               fontFamily: 'Poppins',

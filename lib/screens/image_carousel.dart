@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solar_system_explorer/screens/planets/earth_page.dart';
+import 'package:solar_system_explorer/screens/planets/earth/earth_page.dart';
 import 'package:solar_system_explorer/screens/planets/jupiter_page.dart';
 import 'package:solar_system_explorer/screens/planets/mars_page.dart';
 import 'package:solar_system_explorer/screens/planets/mercury/mercury_page.dart';
@@ -7,7 +7,7 @@ import 'package:solar_system_explorer/screens/planets/neptune_page.dart';
 import 'package:solar_system_explorer/screens/planets/saturn_page.dart';
 import 'package:solar_system_explorer/screens/planets/sun/sun_page.dart';
 import 'package:solar_system_explorer/screens/planets/uranus_page.dart';
-import 'package:solar_system_explorer/screens/planets/venus_page.dart';
+import 'package:solar_system_explorer/screens/planets/venus/venus_page.dart';
 import '../components/carousel components/carousel_item.dart';
 import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';

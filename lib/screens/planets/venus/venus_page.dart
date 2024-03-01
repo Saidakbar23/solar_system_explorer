@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:solar_system_explorer/screens/image_carousel.dart';
-import '../../../data/mercury_data.dart';
+import '../../../data/venus_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
 
-class MercuryPage extends StatefulWidget {
-  static const String id = 'Mercury Page';
-  const MercuryPage({super.key});
+class VenusPage extends StatefulWidget {
+  static const String id = 'Venus Page';
+  const VenusPage({super.key});
 
   @override
-  State<MercuryPage> createState() => _MercuryPageState();
+  State<VenusPage> createState() => _VenusPageState();
 }
 
-class _MercuryPageState extends State<MercuryPage> {
+class _VenusPageState extends State<VenusPage> {
   final List<Widget> pages = [
     Content(),
     ImageGallery(),
@@ -61,7 +60,7 @@ class Content extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         children: [
           Text(
-            'Mercury',
+            'Venus',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 50.0,
@@ -114,7 +113,7 @@ class Content extends StatelessWidget {
                     width: 10,
                   ),
                   Text(
-                    'Active \nMissions',
+                    'Upcoming \nMissions',
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
@@ -223,7 +222,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 400.0,
             child: Image.asset(
-              'images/mercury_gallery/mercury6.jpeg',
+              images[1],
               fit: BoxFit.cover,
             ),
           ),
@@ -258,6 +257,24 @@ class Content extends StatelessWidget {
           ),
           Text(
             information[7],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Atmosphere',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[8],
             style: TextStyle(
               fontSize: 20.0,
               fontFamily: 'Poppins',
