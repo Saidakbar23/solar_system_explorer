@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solar_system_explorer/screens/planets/earth_page.dart';
 import 'package:solar_system_explorer/screens/planets/jupiter_page.dart';
 import 'package:solar_system_explorer/screens/planets/mars_page.dart';
-import 'package:solar_system_explorer/screens/planets/mercury_page.dart';
+import 'package:solar_system_explorer/screens/planets/mercury/mercury_page.dart';
 import 'package:solar_system_explorer/screens/planets/neptune_page.dart';
 import 'package:solar_system_explorer/screens/planets/saturn_page.dart';
 import 'package:solar_system_explorer/screens/planets/sun/sun_page.dart';
