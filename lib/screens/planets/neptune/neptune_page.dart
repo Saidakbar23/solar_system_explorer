@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import '../../../data/mercury_data.dart';
+import '../../../data/neptune_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
 
-class MercuryPage extends StatefulWidget {
-  static const String id = 'Mercury Page';
-  const MercuryPage({super.key});
+class NeptunePage extends StatefulWidget {
+  static const String id = 'Neptune Page';
+  const NeptunePage({super.key});
 
   @override
-  State<MercuryPage> createState() => _MercuryPageState();
+  State<NeptunePage> createState() => _NeptunePageState();
 }
 
-class _MercuryPageState extends State<MercuryPage> {
+class _NeptunePageState extends State<NeptunePage> {
   final List<Widget> pages = [
     Content(),
     ImageGallery(),
@@ -60,7 +60,7 @@ class Content extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         children: [
           Text(
-            'Mercury',
+            'Neptune',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 50.0,
@@ -80,7 +80,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 300.0,
             child: Image.asset(
-              'images/mercury.png',
+              'images/neptune.png',
             ),
           ),
           SizedBox(
@@ -103,29 +103,6 @@ class Content extends StatelessWidget {
                 children: [
                   Text(
                     missions[0],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Active \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    missions[1],
                     style: TextStyle(
                       fontSize: 70,
                       color: Colors.lightBlue,
@@ -222,7 +199,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 400.0,
             child: Image.asset(
-              'images/mercury_gallery/mercury6.jpeg',
+              'images/uranus.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -230,7 +207,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Formation',
+            'Moons',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -248,7 +225,7 @@ class Content extends StatelessWidget {
             height: 10.0,
           ),
           Text(
-            'Surface',
+            'Rings',
             style: TextStyle(
               fontSize: 40.0,
               fontWeight: FontWeight.w800,
@@ -262,8 +239,109 @@ class Content extends StatelessWidget {
               fontFamily: 'Poppins',
             ),
           ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Structure',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[8],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Surface',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[9],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            'Atmosphere',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          Text(
+            information[10],
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Poppins',
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+// class NeptunePage extends StatefulWidget {
+//   static const String id = 'Neptune Page';
+//   const NeptunePage({super.key});
+//
+//   @override
+//   State<NeptunePage> createState() => _NeptunePageState();
+//
+//
+// class _NeptunePageState extends State<NeptunePage> {
+//   final List<Widget> pages = [
+//     Content(),
+//     ImageGallery(),
+//     Location(),
+//   ];
+//
+//   int selectedPageIndex = 0;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: pages[selectedPageIndex],
+//       bottomNavigationBar: NavigationBar(
+//         onDestinationSelected: (int index) {
+//           setState(() {
+//             selectedPageIndex = index;
+//           });
+//         },
+//         selectedIndex: selectedPageIndex,
+//         destinations: [
+//           NavigationDestination(
+//             icon: Icon(Icons.home_filled),
+//             label: '',
+//           ),
+//           NavigationDestination(
+//             icon: Icon(Icons.image_sharp),
+//             label: '',
+//           ),
+//           NavigationDestination(
+//             icon: Icon(Icons.view_timeline),
+//             label: '',
+//           ),
+//         ],
+//       ),
+//     );
+//
+// }
