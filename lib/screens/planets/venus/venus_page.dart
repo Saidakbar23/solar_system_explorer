@@ -80,7 +80,7 @@ class Content extends StatelessWidget {
           SizedBox(
             height: 300.0,
             child: Image.asset(
-              'images/mercury.png',
+              'images/venus.png',
             ),
           ),
           SizedBox(

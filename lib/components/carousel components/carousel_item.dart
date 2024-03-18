@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CarouselItem extends StatelessWidget {
-  CarouselItem({required this.object});
+  const CarouselItem({super.key, required this.object});
 
   final String object;
 

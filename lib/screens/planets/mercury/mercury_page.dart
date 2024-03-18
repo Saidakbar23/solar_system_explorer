@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../data/mercury_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 
 class MercuryPage extends StatefulWidget {
   static const String id = 'Mercury Page';
@@ -59,9 +61,10 @@ class Content extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
         children: [
-          Text(
+          AutoSizeText(
             'Mercury',
             textAlign: TextAlign.center,
+            maxLines: 1,
             style: TextStyle(
               fontSize: 50.0,
               fontFamily: 'Angora',

@@ -11,7 +11,7 @@ class CarouselItemName extends StatelessWidget {
       object.toUpperCase(),
       style: const TextStyle(
         fontFamily: 'Angora',
-        fontSize: 55.0,
+        fontSize: 50.0,
       ),
     );
   }
