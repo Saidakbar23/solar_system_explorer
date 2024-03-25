@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solar_system_explorer/screens/planets/sun/location.dart';
 import '../../../data/sun_data.dart';
 import 'image_gallery.dart';
+import '../../../components/page sections/reusable_sections.dart';
 
 class SunPage extends StatefulWidget {
   static const String id = 'Sun Page';
@@ -93,125 +94,31 @@ class Content extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Text(
-                    missions[0],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Active \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[0],
+                timeline: 'Active',
               ),
-              Row(
-                children: [
-                  Text(
-                    missions[1],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Upcoming \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[1],
+                timeline: 'Upcoming',
               ),
             ],
           ),
-          SizedBox(
-            height: 10.0,
+          ContentSection(
+            sectionTitle: 'Namesake',
+            sectionContent: information[2],
           ),
-          Text(
-            'Namesake',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Potential for Life',
+            sectionContent: information[3],
           ),
-          Text(
-            information[2],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Size and Distance',
+            sectionContent: information[4],
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Potential for Life',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[3],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Size and Distance',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[4],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Orbit and Rotation',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[5],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Orbit and Rotation',
+            sectionContent: information[5],
           ),
           SizedBox(
             height: 400.0,
@@ -220,23 +127,9 @@ class Content extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Formation',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[6],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Formation',
+            sectionContent: information[6],
           ),
         ],
       ),

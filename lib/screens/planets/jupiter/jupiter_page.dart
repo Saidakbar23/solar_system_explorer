@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../data/jupiter_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
+import '../../../components/page sections/reusable_sections.dart';
 
 class JupiterPage extends StatefulWidget {
   static const String id = 'Jupiter Page';
@@ -31,7 +32,7 @@ class _JupiterPageState extends State<JupiterPage> {
           });
         },
         selectedIndex: selectedPageIndex,
-        destinations: [
+        destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_filled),
             label: '',
@@ -99,125 +100,31 @@ class Content extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                children: [
-                  Text(
-                    missions[0],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Active \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[0],
+                timeline: 'Active',
               ),
-              Row(
-                children: [
-                  Text(
-                    missions[1],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Past \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[1],
+                timeline: 'Past',
               ),
             ],
           ),
-          SizedBox(
-            height: 10.0,
+          ContentSection(
+            sectionTitle: 'Namesake',
+            sectionContent: information[2],
           ),
-          Text(
-            'Namesake',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Potential for Life',
+            sectionContent: information[3],
           ),
-          Text(
-            information[2],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Size and Distance',
+            sectionContent: information[4],
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Potential for Life',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[3],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Size and Distance',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[4],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Orbit and Rotation',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[5],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Orbit and Rotation',
+            sectionContent: information[5],
           ),
           SizedBox(
             height: 400.0,
@@ -226,77 +133,21 @@ class Content extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
-            height: 10.0,
+          ContentSection(
+            sectionTitle: 'Moons',
+            sectionContent: information[6],
           ),
-          Text(
-            'Moons',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Rings',
+            sectionContent: information[7],
           ),
-          Text(
-            information[6],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Surface',
+            sectionContent: information[8],
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Rings',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[7],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Surface',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[8],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            'Atmosphere',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          Text(
-            information[9],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
+          ContentSection(
+            sectionTitle: 'Atmosphere',
+            sectionContent: information[9],
           ),
         ],
       ),

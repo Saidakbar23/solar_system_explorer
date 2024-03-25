@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../data/venus_data.dart';
 import 'image_gallery.dart';
 import 'location.dart';
+import '../../../components/page sections/reusable_sections.dart';
 
 class VenusPage extends StatefulWidget {
   static const String id = 'Venus Page';
@@ -31,7 +32,7 @@ class _VenusPageState extends State<VenusPage> {
           });
         },
         selectedIndex: selectedPageIndex,
-        destinations: [
+        destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_filled),
             label: '',
@@ -99,51 +100,13 @@ class Content extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                children: [
-                  Text(
-                    missions[0],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Upcoming \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[0],
+                timeline: 'Upcoming',
               ),
-              Row(
-                children: [
-                  Text(
-                    missions[1],
-                    style: TextStyle(
-                      fontSize: 70,
-                      color: Colors.lightBlue,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Past \nMissions',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                ],
+              MissionsSection(
+                numberOfMissions: missions[1],
+                timeline: 'Past',
               ),
             ],
           ),

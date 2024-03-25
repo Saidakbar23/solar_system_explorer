@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../../data/saturn_data.dart';
 import '../../detail_page.dart';
+import 'package:animations/animations.dart';
 
 class ImageGallery extends StatefulWidget {
   const ImageGallery({super.key});
@@ -27,22 +28,22 @@ class _ImageGalleryState extends State<ImageGallery> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  DetailPage(imagePath: images[index]),
-                            ),
-                          );
-                        });
+                    child: OpenContainer(
+                      closedColor: Colors.black,
+                      closedBuilder:
+                          (BuildContext context, void Function() action) {
+                        return GestureDetector(
+                          onTap: action,
+                          child: Image.asset(
+                            images[index],
+                            fit: BoxFit.cover,
+                          ),
+                        );
                       },
-                      child: Image.asset(
-                        images[index],
-                        fit: BoxFit.cover,
-                      ),
+                      openBuilder: (BuildContext context,
+                          void Function({Object? returnValue}) action) {
+                        return DetailPage(imagePath: images[index]);
+                      },
                     ),
                   ),
                 ],

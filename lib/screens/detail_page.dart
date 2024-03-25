@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage({required this.imagePath});
+  const DetailPage({super.key, required this.imagePath});
 
   final String imagePath;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -39,5 +39,3 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
-
-// ),
