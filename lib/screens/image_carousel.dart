@@ -12,6 +12,7 @@ import '../components/carousel components/carousel_item.dart';
 import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';
 import '../components/animation/swipe_up_animation.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ImageCarousel extends StatefulWidget {
   static const String id = 'Home Screen';
@@ -35,16 +36,28 @@ class _ImageCarouselState extends State<ImageCarousel> {
   ];
   int activePage = 0;
 
+  // List pages = [
+  //   SunPage.id,
+  //   MercuryPage.id,
+  //   VenusPage.id,
+  //   EarthPage.id,
+  //   MarsPage.id,
+  //   JupiterPage.id,
+  //   SaturnPage.id,
+  //   UranusPage.id,
+  //   NeptunePage.id,
+  // ];
+
   List pages = [
-    SunPage.id,
-    MercuryPage.id,
-    VenusPage.id,
-    EarthPage.id,
-    MarsPage.id,
-    JupiterPage.id,
-    SaturnPage.id,
-    UranusPage.id,
-    NeptunePage.id,
+    SunPage(),
+    MercuryPage(),
+    VenusPage(),
+    EarthPage(),
+    MarsPage(),
+    JupiterPage(),
+    SaturnPage(),
+    UranusPage(),
+    NeptunePage(),
   ];
 
   @override
@@ -52,7 +65,10 @@ class _ImageCarouselState extends State<ImageCarousel> {
     return Scaffold(
       body: GestureDetector(
         onVerticalDragUpdate: (dragUpdateDetails) {
-          Navigator.pushNamed(context, pages[activePage % 9]);
+          Navigator.push(
+            context,
+            SwipeUpAnimation(page: pages[activePage % 9]),
+          );
         },
         child: Container(
           alignment: Alignment.bottomLeft,
@@ -77,7 +93,12 @@ class _ImageCarouselState extends State<ImageCarousel> {
                   });
                 },
                 itemBuilder: (BuildContext context, int index) {
-                  return CarouselItem(object: objects[index % 9]);
+                  return Hero(
+                    tag: 'object',
+                    child: CarouselItem(
+                      object: objects[index % 9],
+                    ),
+                  );
                 },
               ),
               Positioned(
@@ -87,7 +108,12 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 height: 200,
                 child: Column(
                   children: [
-                    CarouselItemName(object: objects[activePage % 9]),
+                    Hero(
+                      tag: 'item name',
+                      child: CarouselItemName(
+                        object: objects[activePage % 9],
+                      ),
+                    ),
                     SizedBox(
                       height: 20.0,
                     ),

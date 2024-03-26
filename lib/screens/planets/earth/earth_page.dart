@@ -24,6 +24,7 @@ class _EarthPageState extends State<EarthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: pages[selectedPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -57,97 +58,118 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-        children: [
-          Text(
-            'Earth',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 50.0,
-              fontFamily: 'Angora',
-            ),
-          ),
-          Text(
-            information[0],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 300.0,
-            child: Image.asset(
-              'images/earth.png',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            information[1],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MissionsSection(
-                numberOfMissions: missions[0],
-                timeline: 'Active',
+      child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            flexibleSpace: FlexibleSpaceBar(
+              background: Hero(
+                tag: 'object',
+                child: Image.asset(
+                  'images/earth_gallery/earth.png',
+                  fit: BoxFit.contain,
+                ),
               ),
-              MissionsSection(
-                numberOfMissions: missions[1],
-                timeline: 'Past',
+              title: Hero(
+                tag: 'item name',
+                child: Text(
+                  'Earth',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'Angora',
+                  ),
+                ),
               ),
-            ],
-          ),
-          ContentSection(
-            sectionTitle: 'Namesake',
-            sectionContent: information[2],
-          ),
-          ContentSection(
-            sectionTitle: 'Size and Distance',
-            sectionContent: information[3],
-          ),
-          ContentSection(
-            sectionTitle: 'Orbit and Rotation',
-            sectionContent: information[4],
-          ),
-          ContentSection(
-            sectionTitle: 'Moons',
-            sectionContent: information[5],
-          ),
-          SizedBox(
-            height: 400.0,
-            child: Image.asset(
-              'images/earth_gallery/earth1.jpeg',
-              fit: BoxFit.cover,
+              centerTitle: false,
             ),
+            expandedHeight: MediaQuery.of(context).size.height * 0.35,
+            backgroundColor: Colors.black,
           ),
-          ContentSection(
-            sectionTitle: 'Formation',
-            sectionContent: information[6],
-          ),
-          ContentSection(
-            sectionTitle: 'Structure',
-            sectionContent: information[6],
-          ),
-          ContentSection(
-            sectionTitle: 'Surface',
-            sectionContent: information[8],
-          ),
-          ContentSection(
-            sectionTitle: 'Atmosphere',
-            sectionContent: information[9],
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                Text(
+                  information[0],
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 300.0,
+                  child: Image.asset(
+                    'images/earth_gallery/earth5.png',
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  information[1],
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MissionsSection(
+                      numberOfMissions: missions[0],
+                      timeline: 'Active',
+                    ),
+                    MissionsSection(
+                      numberOfMissions: missions[1],
+                      timeline: 'Past',
+                    ),
+                  ],
+                ),
+                ContentSection(
+                  sectionTitle: 'Namesake',
+                  sectionContent: information[2],
+                ),
+                ContentSection(
+                  sectionTitle: 'Size and Distance',
+                  sectionContent: information[3],
+                ),
+                ContentSection(
+                  sectionTitle: 'Orbit and Rotation',
+                  sectionContent: information[4],
+                ),
+                ContentSection(
+                  sectionTitle: 'Moons',
+                  sectionContent: information[5],
+                ),
+                SizedBox(
+                  height: 400.0,
+                  child: Image.asset(
+                    'images/earth_gallery/earth1.jpeg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                ContentSection(
+                  sectionTitle: 'Formation',
+                  sectionContent: information[6],
+                ),
+                ContentSection(
+                  sectionTitle: 'Structure',
+                  sectionContent: information[6],
+                ),
+                ContentSection(
+                  sectionTitle: 'Surface',
+                  sectionContent: information[8],
+                ),
+                ContentSection(
+                  sectionTitle: 'Atmosphere',
+                  sectionContent: information[9],
+                ),
+              ],
+            ),
           ),
         ],
       ),
