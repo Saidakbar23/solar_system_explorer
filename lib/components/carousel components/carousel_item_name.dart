@@ -9,10 +9,10 @@ class CarouselItemName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       object.toUpperCase(),
-      style: const TextStyle(
-        fontFamily: 'Angora',
-        fontSize: 50.0,
-      ),
+      style: Theme.of(context).textTheme.headline6!.copyWith(
+            fontFamily: 'Angora',
+            fontSize: 50.0,
+          ),
     );
   }
 }

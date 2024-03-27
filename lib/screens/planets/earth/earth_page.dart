@@ -61,6 +61,7 @@ class Content extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverAppBar(
+            stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
                 tag: 'object',
@@ -73,10 +74,10 @@ class Content extends StatelessWidget {
                 tag: 'item name',
                 child: Text(
                   'Earth',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'Angora',
-                  ),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        fontSize: 30.0,
+                        fontFamily: 'Angora',
+                      ),
                 ),
               ),
               centerTitle: false,
