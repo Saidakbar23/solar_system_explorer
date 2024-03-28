@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ContentSection extends StatelessWidget {
   const ContentSection(
@@ -9,6 +11,17 @@ class ContentSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore fireStoreDataBase = FirebaseFirestore.instance;
+
+    // Stream<List<ContentModel>> getPlanetInfo() {
+    //   var infoList = fireStoreDataBase.collection('planets');
+    //   infoList.doc()
+    // }
+
+    // Stream planets =
+    //     FirebaseFirestore.instance.collection('planets').snapshots();
+    // print(planets);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -68,4 +81,15 @@ class MissionsSection extends StatelessWidget {
       ],
     );
   }
+}
+
+class ContentModel {
+  late String title;
+  late String content;
+
+  ContentModel({required this.content, required this.title});
+
+  ContentModel.fromJson(Map<String, dynamic> parsedJSON)
+      : title = parsedJSON['title'],
+        content = parsedJSON['content'];
 }

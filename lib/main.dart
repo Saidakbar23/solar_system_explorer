@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system_explorer/firebase_options.dart';
 import 'package:solar_system_explorer/screens/planets/earth/earth_page.dart';
 import 'package:solar_system_explorer/screens/planets/jupiter/jupiter_page.dart';
 import 'package:solar_system_explorer/screens/planets/mars/mars_page.dart';
@@ -12,9 +13,11 @@ import 'screens/image_carousel.dart';
 import 'components/backend.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
