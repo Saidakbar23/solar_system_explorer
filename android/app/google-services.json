@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "67786755143",
+    "project_id": "solarsystemexplorer",
+    "storage_bucket": "solarsystemexplorer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67786755143:android:2e8ef2a7f4ab33635c3562",
+        "android_client_info": {
+          "package_name": "com.saidakbarjuraev.solar_system_explorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM3OwzMoi8Z_urgo75Zf-F0Sbpk70wWFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
