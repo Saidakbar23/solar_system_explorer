@@ -1,5 +1,6 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ContentSection extends StatelessWidget {
@@ -11,17 +12,65 @@ class ContentSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseFirestore fireStoreDataBase = FirebaseFirestore.instance;
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-    // Stream<List<ContentModel>> getPlanetInfo() {
-    //   var infoList = fireStoreDataBase.collection('planets');
-    //   infoList.doc()
-    // }
+    var informationList = [];
+    Future<List<Map<String, dynamic>>> fetchData(
+        FirebaseFirestore firestore) async {
+      String firstCollection = 'planets';
+      String firstDocumentID = '92hThamH0FdVZA8OHewS';
+      String secondCollection = 'sun';
+      String secondDocumentID = 'PVAQW8OpP39D7YKfdkhw';
+      String thirdCollection = 'information';
 
-    // Stream planets =
-    //     FirebaseFirestore.instance.collection('planets').snapshots();
-    // print(planets);
+      QuerySnapshot<Map<String, dynamic>> querySnapshot = await firestore
+          .collection(firstCollection)
+          .doc(firstDocumentID)
+          .collection(secondCollection)
+          .doc(secondDocumentID)
+          .collection(thirdCollection)
+          .get();
 
+      List<Map<String, dynamic>> dataList = [];
+
+      querySnapshot.docs.forEach((doc) {
+        dataList.add(doc.data());
+      });
+      informationList = dataList;
+      return dataList;
+      // if (querySnapshot.docs.isNotEmpty) {
+      //   documentSnapshot = querySnapshot.docs.toList();
+      // }
+      //
+      // setState(() {
+      //   informationList = documentSnapshot;
+      // });
+      // try {
+      //   QuerySnapshot<Map<String, dynamic>> querySnapshot = await firestore
+      //       .collection(firstCollection)
+      //       .doc(firstDocumentID)
+      //       .collection(secondCollection)
+      //       .doc(secondDocumentID)
+      //       .collection(thirdCollection)
+      //       .get();
+      //
+      //   if (querySnapshot.docs.isNotEmpty) {
+      //     var documentSnapshot = querySnapshot.docs.toList();
+      //
+      //     print('Data: ${documentSnapshot[0].data()}');
+      //   } else {
+      //     print('no such document');
+      //   }
+      // } catch (e) {
+      //   print('error getting document: $e');
+      // }
+    }
+
+    fetchData(firestore);
+    print(informationList);
+    Timer(Duration(seconds: 10), () {
+      print(informationList);
+    });
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
