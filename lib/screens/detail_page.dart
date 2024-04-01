@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(imagePath),
+            image: NetworkImage(imagePath),
             fit: BoxFit.contain,
           ),
         ),
