@@ -6,6 +6,8 @@ Future<List<Map<String, dynamic>>> fetchData(
     'sun': 'PVAQW8OpP39D7YKfdkhw',
     'mercury': '3cJbvPR2UUdIBDwhzRss',
     'venus': '78WQhiQHs6FbzM1DuaUp',
+    'earth': 'Z6IgELoMyhOffjBVl0In',
+    'mars': 'ehIltoQnVRHXwYKk5SY0',
   };
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   String firstCollection = 'planets';

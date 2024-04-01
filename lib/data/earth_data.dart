@@ -12,8 +12,8 @@ const List<String> information = [
 ];
 
 const List missions = [
-  '32',
-  '64',
+  '39',
+  '96',
 ];
 const List images = [
   'images/earth_gallery/earth1.jpeg',
