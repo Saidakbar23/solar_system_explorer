@@ -16,7 +16,7 @@ class SunPage extends StatefulWidget {
 class _SunPageState extends State<SunPage> {
   final List<Widget> pages = [
     Content(),
-    ImageGallery(),
+    ImageGallery(planet: 'sun'),
     Location(),
   ];
 
@@ -101,8 +101,13 @@ class Content extends StatelessWidget {
                 MissionsSection(
                   numberOfMissions: missions[1],
                   timeline: 'Upcoming',
+                  planet: 'sun',
                 ),
-                ContentSection(sectionTitle: 'fdsf', sectionContent: 'sdfdsf'),
+                ContentSection(
+                  sectionTitle: 'fdsf',
+                  sectionContent: 'sdfdsf',
+                  planet: 'sun',
+                ),
                 SizedBox(
                   height: 400.0,
                   child: Image.asset(

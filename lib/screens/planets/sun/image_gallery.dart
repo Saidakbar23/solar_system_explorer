@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import '../../../data/sun_data.dart';
 import '../../detail_page.dart';
 import 'package:animations/animations.dart';
 import '../../../components/backend/backend.dart';
 
 class ImageGallery extends StatefulWidget {
-  const ImageGallery({super.key});
+  const ImageGallery({super.key, this.planet});
+
+  final String? planet;
 
   @override
   State<ImageGallery> createState() => _ImageGalleryState();
@@ -20,7 +21,7 @@ class _ImageGalleryState extends State<ImageGallery> {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: FutureBuilder(
-            future: fetchData('images'),
+            future: fetchData('images', widget.planet!),
             builder: (BuildContext context,
                 AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {

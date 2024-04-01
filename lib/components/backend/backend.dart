@@ -1,11 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Future<List<Map<String, dynamic>>> fetchData(String contentType) async {
+Future<List<Map<String, dynamic>>> fetchData(
+    String contentType, String planet) async {
+  Map<String, String> planetIDs = {
+    'sun': 'PVAQW8OpP39D7YKfdkhw',
+    'mercury': '3cJbvPR2UUdIBDwhzRss',
+    'venus': '78WQhiQHs6FbzM1DuaUp',
+  };
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   String firstCollection = 'planets';
   String firstDocumentID = '92hThamH0FdVZA8OHewS';
-  String secondCollection = 'sun';
-  String secondDocumentID = 'PVAQW8OpP39D7YKfdkhw';
+  String secondCollection = planet;
+  String secondDocumentID = planetIDs[planet]!;
   String thirdCollection = contentType;
 
   QuerySnapshot<Map<String, dynamic>> querySnapshot = await firestore

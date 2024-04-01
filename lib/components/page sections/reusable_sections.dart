@@ -3,15 +3,19 @@ import '../backend/backend.dart';
 
 class ContentSection extends StatelessWidget {
   const ContentSection(
-      {super.key, required this.sectionTitle, required this.sectionContent});
+      {super.key,
+      required this.sectionTitle,
+      required this.sectionContent,
+      this.planet});
 
   final String sectionTitle;
   final String sectionContent;
+  final String? planet;
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: fetchData('information'),
+      future: fetchData('information', planet!),
       builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
@@ -57,15 +61,19 @@ class ContentSection extends StatelessWidget {
 
 class MissionsSection extends StatelessWidget {
   const MissionsSection(
-      {super.key, required this.numberOfMissions, required this.timeline});
+      {super.key,
+      required this.numberOfMissions,
+      required this.timeline,
+      this.planet});
 
   final String numberOfMissions;
   final String timeline;
+  final String? planet;
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: fetchData('missions'),
+      future: fetchData('missions', planet!),
       builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
