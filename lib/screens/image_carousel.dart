@@ -12,7 +12,6 @@ import '../components/carousel components/carousel_item.dart';
 import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';
 import '../components/animation/swipe_up_animation.dart';
-import 'package:page_transition/page_transition.dart';
 
 class ImageCarousel extends StatefulWidget {
   static const String id = 'Home Screen';

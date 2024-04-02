@@ -10,7 +10,6 @@ import 'package:solar_system_explorer/screens/planets/sun/sun_page.dart';
 import 'package:solar_system_explorer/screens/planets/uranus/uranus_page.dart';
 import 'package:solar_system_explorer/screens/planets/venus/venus_page.dart';
 import 'screens/image_carousel.dart';
-import 'components/backend/backend.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {

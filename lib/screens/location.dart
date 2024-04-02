@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Location extends StatefulWidget {
-  const Location({super.key});
+  const Location({super.key, required this.planet});
+
+  final String planet;
 
   @override
   State<Location> createState() => _LocationState();
@@ -28,8 +30,8 @@ class _LocationState extends State<Location> {
           });
         },
       ))
-      ..loadRequest(
-          Uri.parse('https://eyes.nasa.gov/apps/solar-system/#/uranus'));
+      ..loadRequest(Uri.parse(
+          'https://eyes.nasa.gov/apps/solar-system/#/${widget.planet}'));
   }
 
   @override

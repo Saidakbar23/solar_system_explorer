@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/mars_data.dart';
-import 'image_gallery.dart';
-import 'location.dart';
+import '../../image_gallery.dart';
+import '../../location.dart';
 import '../../../components/page sections/reusable_sections.dart';
 
 class MarsPage extends StatefulWidget {
@@ -15,9 +15,18 @@ class MarsPage extends StatefulWidget {
 class _MarsPageState extends State<MarsPage> {
   final List<Widget> pages = [
     Content(),
-    ImageGallery(),
-    Location(),
+    ImageGallery(planet: 'mars'),
+    Location(
+      planet: 'mars',
+    ),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    Location(planet: 'mars');
+    ImageGallery(planet: 'mars');
+  }
 
   int selectedPageIndex = 0;
 
@@ -57,101 +66,68 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-        children: [
-          Text(
-            'Mars',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 50.0,
-              fontFamily: 'Angora',
-            ),
-          ),
-          Text(
-            information[0],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 300.0,
-            child: Image.asset(
-              'images/mars.png',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            information[1],
-            style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Poppins',
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MissionsSection(
-                numberOfMissions: missions[0],
-                timeline: 'Active',
+      child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            stretch: true,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Hero(
+                tag: 'object',
+                child: Image.asset(
+                  'images/mars.png',
+                  fit: BoxFit.contain,
+                ),
               ),
-              MissionsSection(
-                numberOfMissions: missions[1],
-                timeline: 'Past',
+              title: Hero(
+                tag: 'item name',
+                child: Text(
+                  'Mars',
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        fontSize: 30.0,
+                        fontFamily: 'Angora',
+                      ),
+                ),
               ),
-            ],
-          ),
-          ContentSection(
-            sectionTitle: 'Namesake',
-            sectionContent: information[2],
-          ),
-          ContentSection(
-            sectionTitle: 'Potential for Life',
-            sectionContent: information[3],
-          ),
-          ContentSection(
-            sectionTitle: 'Size and Distance',
-            sectionContent: information[4],
-          ),
-          ContentSection(
-            sectionTitle: 'Orbit and Rotation',
-            sectionContent: information[5],
-          ),
-          SizedBox(
-            height: 400.0,
-            child: Image.asset(
-              'images/mars.png',
-              fit: BoxFit.cover,
+              centerTitle: false,
             ),
+            expandedHeight: MediaQuery.of(context).size.height * 0.35,
+            backgroundColor: Colors.black,
           ),
-          ContentSection(
-            sectionTitle: 'Moons',
-            sectionContent: information[6],
-          ),
-          ContentSection(
-            sectionTitle: 'Formation',
-            sectionContent: information[7],
-          ),
-          ContentSection(
-            sectionTitle: 'Structure',
-            sectionContent: information[8],
-          ),
-          ContentSection(
-            sectionTitle: 'Surface',
-            sectionContent: information[9],
-          ),
-          ContentSection(
-            sectionTitle: 'Atmosphere',
-            sectionContent: information[10],
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  information[0],
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                MissionsSection(
+                  numberOfMissions: missions[1],
+                  timeline: 'Past',
+                  planet: 'mars',
+                ),
+                SizedBox(
+                  height: 400.0,
+                  child: Image.asset(
+                    'images/mars_gallery/mars4.jpeg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                ContentSection(
+                  sectionTitle: 'Namesake',
+                  sectionContent: information[2],
+                  planet: 'mars',
+                ),
+              ],
+            ),
           ),
         ],
       ),

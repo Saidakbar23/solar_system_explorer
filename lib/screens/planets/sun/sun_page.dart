@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:solar_system_explorer/screens/planets/sun/location.dart';
 import '../../../data/sun_data.dart';
-import 'image_gallery.dart';
+import '../../image_gallery.dart';
+import '../../location.dart';
 import '../../../components/page sections/reusable_sections.dart';
-import '../../../components/backend/backend.dart';
 
 class SunPage extends StatefulWidget {
   static const String id = 'Sun Page';
@@ -17,10 +16,17 @@ class _SunPageState extends State<SunPage> {
   final List<Widget> pages = [
     Content(),
     ImageGallery(planet: 'sun'),
-    Location(),
+    Location(planet: 'sun'),
   ];
 
   int selectedPageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    ImageGallery(planet: 'sun');
+    Location(planet: 'sun');
+  }
 
   @override
   Widget build(BuildContext context) {

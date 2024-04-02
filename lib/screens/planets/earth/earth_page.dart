@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../data/earth_data.dart';
-import 'image_gallery.dart';
-import 'location.dart';
+import '../../location.dart';
 import '../../../components/page sections/reusable_sections.dart';
+import '../../image_gallery.dart';
 
 class EarthPage extends StatefulWidget {
   static const String id = 'Earth Page';
@@ -15,11 +15,22 @@ class EarthPage extends StatefulWidget {
 class _EarthPageState extends State<EarthPage> {
   final List<Widget> pages = [
     Content(),
-    ImageGallery(),
-    Location(),
+    ImageGallery(
+      planet: 'earth',
+    ),
+    Location(
+      planet: 'earth',
+    ),
   ];
 
   int selectedPageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    Location(planet: 'earth');
+    ImageGallery(planet: 'earth');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +99,9 @@ class Content extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
+                SizedBox(
+                  height: 10,
+                ),
                 Text(
                   information[0],
                   style: TextStyle(
@@ -98,76 +112,22 @@ class Content extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                SizedBox(
-                  height: 300.0,
-                  child: Image.asset(
-                    'images/earth_gallery/earth5.png',
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  information[1],
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Poppins',
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    MissionsSection(
-                      numberOfMissions: missions[0],
-                      timeline: 'Active',
-                    ),
-                    MissionsSection(
-                      numberOfMissions: missions[1],
-                      timeline: 'Past',
-                    ),
-                  ],
-                ),
-                ContentSection(
-                  sectionTitle: 'Namesake',
-                  sectionContent: information[2],
-                ),
-                ContentSection(
-                  sectionTitle: 'Size and Distance',
-                  sectionContent: information[3],
-                ),
-                ContentSection(
-                  sectionTitle: 'Orbit and Rotation',
-                  sectionContent: information[4],
-                ),
-                ContentSection(
-                  sectionTitle: 'Moons',
-                  sectionContent: information[5],
+                MissionsSection(
+                  numberOfMissions: missions[1],
+                  timeline: 'Past',
+                  planet: 'earth',
                 ),
                 SizedBox(
                   height: 400.0,
                   child: Image.asset(
-                    'images/earth_gallery/earth1.jpeg',
+                    'images/earth_gallery/earth4.jpeg',
                     fit: BoxFit.cover,
                   ),
                 ),
                 ContentSection(
-                  sectionTitle: 'Formation',
-                  sectionContent: information[6],
-                ),
-                ContentSection(
-                  sectionTitle: 'Structure',
-                  sectionContent: information[6],
-                ),
-                ContentSection(
-                  sectionTitle: 'Surface',
-                  sectionContent: information[8],
-                ),
-                ContentSection(
-                  sectionTitle: 'Atmosphere',
-                  sectionContent: information[9],
+                  sectionTitle: 'Namesake',
+                  sectionContent: information[2],
+                  planet: 'earth',
                 ),
               ],
             ),
