@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system_explorer/screens/image_carousel.dart';
 import '../../../data/sun_data.dart';
 import '../../image_gallery.dart';
 import '../../location.dart';
@@ -87,6 +88,17 @@ class Content extends StatelessWidget {
                 ),
               ),
               centerTitle: true,
+            ),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_upward_rounded,
+                size: 30.0,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ImageCarousel()));
+              },
             ),
             expandedHeight: MediaQuery.of(context).size.height * 0.35,
             backgroundColor: Colors.black,
