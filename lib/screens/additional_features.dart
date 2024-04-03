@@ -8,6 +8,7 @@ import 'package:solar_system_explorer/screens/planets/saturn/saturn_page.dart';
 import 'package:solar_system_explorer/screens/planets/sun/sun_page.dart';
 import 'package:solar_system_explorer/screens/planets/uranus/uranus_page.dart';
 import 'package:solar_system_explorer/screens/planets/venus/venus_page.dart';
+import 'apod.dart';
 
 class AdditionalFeatures extends StatelessWidget {
   static const String id = 'Additional Features';
@@ -106,9 +107,14 @@ class AdditionalFeatures extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return APOD();
+                  }));
+                },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.grey),
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.grey.withOpacity(0.7)),
                   padding: MaterialStateProperty.all(
                     EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                   ),
