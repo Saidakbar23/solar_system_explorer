@@ -4,9 +4,10 @@ import '../../../data/neptune_data.dart';
 import '../../image_gallery.dart';
 import '../../location.dart';
 import '../../../components/page sections/reusable_sections.dart';
+import 'package:animations/animations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NeptunePage extends StatefulWidget {
-  static const String id = 'Neptune Page';
   const NeptunePage({super.key});
 
   @override
@@ -16,12 +17,8 @@ class NeptunePage extends StatefulWidget {
 class _NeptunePageState extends State<NeptunePage> {
   final List<Widget> pages = [
     Content(),
-    ImageGallery(
-      planet: 'neptune',
-    ),
-    Location(
-      planet: 'neptune',
-    ),
+    ImageGallery(planet: 'neptune'),
+    Location(planet: 'neptune'),
   ];
 
   int selectedPageIndex = 0;
@@ -29,7 +26,21 @@ class _NeptunePageState extends State<NeptunePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[selectedPageIndex],
+      body: PageTransitionSwitcher(
+        transitionBuilder: (
+          Widget child,
+          Animation<double> primaryAnimation,
+          Animation<double> secondaryAnimation,
+        ) {
+          return FadeThroughTransition(
+            animation: primaryAnimation,
+            secondaryAnimation: secondaryAnimation,
+            fillColor: Colors.black,
+            child: child,
+          );
+        },
+        child: pages[selectedPageIndex],
+      ),
       bottomNavigationBar: NavigationBar(
         backgroundColor: Colors.black.withOpacity(0.1),
         surfaceTintColor: Colors.black54,
@@ -41,15 +52,45 @@ class _NeptunePageState extends State<NeptunePage> {
         selectedIndex: selectedPageIndex,
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home_filled),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.globe,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.globe,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
           NavigationDestination(
-            icon: Icon(Icons.image_sharp),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.cameraRetro,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.cameraRetro,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
           NavigationDestination(
-            icon: Icon(Icons.view_timeline),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.unity,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.unity,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
         ],
@@ -88,6 +129,16 @@ class Content extends StatelessWidget {
               ),
               centerTitle: false,
             ),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_upward_rounded,
+                size: 30.0,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
             expandedHeight: MediaQuery.of(context).size.height * 0.35,
             backgroundColor: Colors.black,
           ),
@@ -108,8 +159,6 @@ class Content extends StatelessWidget {
                   height: 10,
                 ),
                 MissionsSection(
-                  numberOfMissions: missions[0],
-                  timeline: 'Past',
                   planet: 'neptune',
                 ),
                 SizedBox(
@@ -120,8 +169,6 @@ class Content extends StatelessWidget {
                   ),
                 ),
                 ContentSection(
-                  sectionTitle: 'Namesake',
-                  sectionContent: information[2],
                   planet: 'neptune',
                 ),
               ],

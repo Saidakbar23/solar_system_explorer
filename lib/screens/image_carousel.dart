@@ -13,6 +13,7 @@ import '../components/carousel components/carousel_item_name.dart';
 import '../components/carousel components/carousel_page_tracker.dart';
 import '../components/animation/swipe_up_animation.dart';
 import 'additional_features.dart';
+import 'package:get/get.dart';
 
 class ImageCarousel extends StatefulWidget {
   static const String id = 'Home Screen';
@@ -79,10 +80,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
                   alignment: Alignment.topLeft,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AdditionalFeatures()));
+                      Get.to(() => AdditionalFeatures(),
+                          transition: Transition.fade);
                     },
                     child: Icon(
                       Icons.list_rounded,

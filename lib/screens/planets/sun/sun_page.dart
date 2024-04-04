@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:solar_system_explorer/screens/image_carousel.dart';
 import '../../../data/sun_data.dart';
 import '../../image_gallery.dart';
 import '../../location.dart';
 import '../../../components/page sections/reusable_sections.dart';
+import 'package:animations/animations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SunPage extends StatefulWidget {
-  static const String id = 'Sun Page';
   const SunPage({super.key});
 
   @override
@@ -23,17 +23,26 @@ class _SunPageState extends State<SunPage> {
   int selectedPageIndex = 0;
 
   @override
-  void initState() {
-    super.initState();
-    ImageGallery(planet: 'sun');
-    Location(planet: 'sun');
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[selectedPageIndex],
+      body: PageTransitionSwitcher(
+        transitionBuilder: (
+          Widget child,
+          Animation<double> primaryAnimation,
+          Animation<double> secondaryAnimation,
+        ) {
+          return FadeThroughTransition(
+            animation: primaryAnimation,
+            secondaryAnimation: secondaryAnimation,
+            fillColor: Colors.black,
+            child: child,
+          );
+        },
+        child: pages[selectedPageIndex],
+      ),
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.black.withOpacity(0.1),
+        surfaceTintColor: Colors.black54,
         onDestinationSelected: (int index) {
           setState(() {
             selectedPageIndex = index;
@@ -42,15 +51,45 @@ class _SunPageState extends State<SunPage> {
         selectedIndex: selectedPageIndex,
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home_filled),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.globe,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.globe,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
           NavigationDestination(
-            icon: Icon(Icons.image_sharp),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.cameraRetro,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.cameraRetro,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
           NavigationDestination(
-            icon: Icon(Icons.view_timeline),
+            selectedIcon: FaIcon(
+              FontAwesomeIcons.unity,
+              color: Colors.lightBlue,
+            ),
+            icon: IconButton(
+              onPressed: null,
+              icon: FaIcon(
+                FontAwesomeIcons.unity,
+                color: Colors.white,
+              ),
+            ),
             label: '',
           ),
         ],
@@ -81,7 +120,7 @@ class Content extends StatelessWidget {
                 tag: 'item name',
                 child: Text(
                   'Sun',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         fontSize: 30.0,
                         fontFamily: 'Angora',
                       ),
@@ -96,8 +135,7 @@ class Content extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ImageCarousel()));
+                Navigator.pop(context);
               },
             ),
             expandedHeight: MediaQuery.of(context).size.height * 0.35,
@@ -117,13 +155,6 @@ class Content extends StatelessWidget {
                   height: 10,
                 ),
                 MissionsSection(
-                  numberOfMissions: missions[1],
-                  timeline: 'Upcoming',
-                  planet: 'sun',
-                ),
-                ContentSection(
-                  sectionTitle: 'fdsf',
-                  sectionContent: 'sdfdsf',
                   planet: 'sun',
                 ),
                 SizedBox(
@@ -132,6 +163,9 @@ class Content extends StatelessWidget {
                     'images/sun_gallery/sun.png',
                     fit: BoxFit.cover,
                   ),
+                ),
+                ContentSection(
+                  planet: 'sun',
                 ),
               ],
             ),

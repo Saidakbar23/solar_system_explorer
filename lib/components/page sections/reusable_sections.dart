@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import '../backend/backend.dart';
 
 class ContentSection extends StatelessWidget {
-  const ContentSection(
-      {super.key,
-      required this.sectionTitle,
-      required this.sectionContent,
-      this.planet});
-
-  final String sectionTitle;
-  final String sectionContent;
+  const ContentSection({super.key, this.planet});
   final String? planet;
 
   @override
@@ -60,14 +53,8 @@ class ContentSection extends StatelessWidget {
 }
 
 class MissionsSection extends StatelessWidget {
-  const MissionsSection(
-      {super.key,
-      required this.numberOfMissions,
-      required this.timeline,
-      this.planet});
+  const MissionsSection({super.key, this.planet});
 
-  final String numberOfMissions;
-  final String timeline;
   final String? planet;
 
   @override
@@ -116,15 +103,4 @@ class MissionsSection extends StatelessWidget {
       },
     );
   }
-}
-
-class ContentModel {
-  late String title;
-  late String content;
-
-  ContentModel({required this.content, required this.title});
-
-  ContentModel.fromJson(Map<String, dynamic> parsedJSON)
-      : title = parsedJSON['title'],
-        content = parsedJSON['content'];
 }
