@@ -8,6 +8,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+    // options: FirebaseOptions(
+    //   apiKey: "AIzaSyAQ4O801k6pCZXvDxbblyUdjcMcoj8ocfE",
+    //   projectId: "solarsystemexplorer",
+    //   messagingSenderId: "67786755143",
+    //   appId: "1:67786755143:web:0684967db9b4f68f5c3562",
+    // ),
   );
   runApp(const MyApp());
 }
